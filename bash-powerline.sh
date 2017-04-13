@@ -3,79 +3,79 @@
 __powerline() {
 
     # Max length of full path
-    readonly MAX_PATH_LENGTH=30
+    MAX_PATH_LENGTH=30
 
     # Unicode symbols
-    readonly PS_SYMBOL_DARWIN=''
-    readonly PS_SYMBOL_LINUX='$'
-    readonly PS_SYMBOL_OTHER='%'
-    readonly GIT_BRANCH_SYMBOL='⑂ '
-    readonly GIT_BRANCH_CHANGED_SYMBOL='+'
-    readonly GIT_NEED_PUSH_SYMBOL='⇡'
-    readonly GIT_NEED_PULL_SYMBOL='⇣'
+    PS_SYMBOL_DARWIN=''
+    PS_SYMBOL_LINUX='$'
+    PS_SYMBOL_OTHER='%'
+    GIT_BRANCH_SYMBOL='⑂ '
+    GIT_BRANCH_CHANGED_SYMBOL='+'
+    GIT_NEED_PUSH_SYMBOL='⇡'
+    GIT_NEED_PULL_SYMBOL='⇣'
 
     # Powerline symbols
-    readonly GIT_BRANCH_SYMBOL_POWERLINE=' '
-    readonly RIGHT_SOLID_ARROW_POWERLINE=''
-    readonly LEFT_SOLID_ARROW_POWERLINE=''
-    readonly RIGHT_ARROW_POWERLINE=''
-    readonly LEFT_ARROW_POWERLINE=''
+    GIT_BRANCH_SYMBOL_POWERLINE=' '
+    RIGHT_SOLID_ARROW_POWERLINE=''
+    LEFT_SOLID_ARROW_POWERLINE=''
+    RIGHT_ARROW_POWERLINE=''
+    LEFT_ARROW_POWERLINE=''
 
     # ANSI Colors
     # Background
-    readonly BG_BLACK="\[$(tput setab 0)\]"
-    readonly BG_RED="\[$(tput setab 1)\]"
-    readonly BG_GREEN="\[$(tput setab 2)\]"
-    readonly BG_YELLOW="\[$(tput setab 3)\]"
-    readonly BG_BLUE="\[$(tput setab 4)\]"
-    readonly BG_MAGENTA="\[$(tput setab 5)\]"
-    readonly BG_CYAN="\[$(tput setab 6)\]"
-    readonly BG_WHITE="\[$(tput setab 7)\]"
+    BG_BLACK="\[$(tput setab 0)\]"
+    BG_RED="\[$(tput setab 1)\]"
+    BG_GREEN="\[$(tput setab 2)\]"
+    BG_YELLOW="\[$(tput setab 3)\]"
+    BG_BLUE="\[$(tput setab 4)\]"
+    BG_MAGENTA="\[$(tput setab 5)\]"
+    BG_CYAN="\[$(tput setab 6)\]"
+    BG_WHITE="\[$(tput setab 7)\]"
 
-    readonly BG_BLACK_BRIGHT="\[$(tput setab 8)\]"
-    readonly BG_RED_BRIGHT="\[$(tput setab 9)\]"
-    readonly BG_GREEN_BRIGHT="\[$(tput setab 10)\]"
-    readonly BG_YELLOW_BRIGHT="\[$(tput setab 11)\]"
-    readonly BG_BLUE_BRIGHT="\[$(tput setab 12)\]"
-    readonly BG_MAGENTA_BRIGHT="\[$(tput setab 13)\]"
-    readonly BG_CYAN_BRIGHT="\[$(tput setab 14)\]"
-    readonly BG_WHITE_BRIGHT="\[$(tput setab 15)\]"
+    BG_BLACK_BRIGHT="\[$(tput setab 8)\]"
+    BG_RED_BRIGHT="\[$(tput setab 9)\]"
+    BG_GREEN_BRIGHT="\[$(tput setab 10)\]"
+    BG_YELLOW_BRIGHT="\[$(tput setab 11)\]"
+    BG_BLUE_BRIGHT="\[$(tput setab 12)\]"
+    BG_MAGENTA_BRIGHT="\[$(tput setab 13)\]"
+    BG_CYAN_BRIGHT="\[$(tput setab 14)\]"
+    BG_WHITE_BRIGHT="\[$(tput setab 15)\]"
 
     # Foreground
-    readonly FG_BLACK="\[$(tput setaf 0)\]"
-    readonly FG_RED="\[$(tput setaf 1)\]"
-    readonly FG_GREEN="\[$(tput setaf 2)\]"
-    readonly FG_YELLOW="\[$(tput setaf 3)\]"
-    readonly FG_BLUE="\[$(tput setaf 4)\]"
-    readonly FG_MAGENTA="\[$(tput setaf 5)\]"
-    readonly FG_CYAN="\[$(tput setaf 6)\]"
-    readonly FG_WHITE="\[$(tput setaf 7)\]"
+    FG_BLACK="\[$(tput setaf 0)\]"
+    FG_RED="\[$(tput setaf 1)\]"
+    FG_GREEN="\[$(tput setaf 2)\]"
+    FG_YELLOW="\[$(tput setaf 3)\]"
+    FG_BLUE="\[$(tput setaf 4)\]"
+    FG_MAGENTA="\[$(tput setaf 5)\]"
+    FG_CYAN="\[$(tput setaf 6)\]"
+    FG_WHITE="\[$(tput setaf 7)\]"
 
-    readonly FG_BLACK_BRIGHT="\[$(tput setaf 8)\]"
-    readonly FG_RED_BRIGHT="\[$(tput setaf 9)\]"
-    readonly FG_GREEN_BRIGHT="\[$(tput setaf 10)\]"
-    readonly FG_YELLOW_BRIGHT="\[$(tput setaf 11)\]"
-    readonly FG_BLUE_BRIGHT="\[$(tput setaf 12)\]"
-    readonly FG_MAGENTA_BRIGHT="\[$(tput setaf 13)\]"
-    readonly FG_CYAN_BRIGHT="\[$(tput setaf 14)\]"
-    readonly FG_WHITE_BRIGHT="\[$(tput setaf 15)\]"
+    FG_BLACK_BRIGHT="\[$(tput setaf 8)\]"
+    FG_RED_BRIGHT="\[$(tput setaf 9)\]"
+    FG_GREEN_BRIGHT="\[$(tput setaf 10)\]"
+    FG_YELLOW_BRIGHT="\[$(tput setaf 11)\]"
+    FG_BLUE_BRIGHT="\[$(tput setaf 12)\]"
+    FG_MAGENTA_BRIGHT="\[$(tput setaf 13)\]"
+    FG_CYAN_BRIGHT="\[$(tput setaf 14)\]"
+    FG_WHITE_BRIGHT="\[$(tput setaf 15)\]"
 
     # Other Effects
-    readonly DIM="\[$(tput dim)\]"
-    readonly REVERSE="\[$(tput rev)\]"
-    readonly RESET="\[$(tput sgr0)\]"
-    readonly BOLD="\[$(tput bold)\]"
+    DIM="\[$(tput dim)\]"
+    REVERSE="\[$(tput rev)\]"
+    RESET="\[$(tput sgr0)\]"
+    BOLD="\[$(tput bold)\]"
 
     # Which OS?
     case "$(uname)" in
         Darwin)
-            readonly PS_SYMBOL=$PS_SYMBOL_DARWIN
+            PS_SYMBOL=$PS_SYMBOL_DARWIN
             ;;
         Linux)
-            readonly PS_SYMBOL=$PS_SYMBOL_LINUX
+            PS_SYMBOL=$PS_SYMBOL_LINUX
             ;;
         *)
-            readonly PS_SYMBOL=$PS_SYMBOL_OTHER
+            PS_SYMBOL=$PS_SYMBOL_OTHER
     esac
 
     __black_blue_divider() {
