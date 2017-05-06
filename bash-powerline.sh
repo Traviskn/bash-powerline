@@ -115,9 +115,9 @@ __powerline() {
 
         # print the git branch segment without a trailing newline
         if [ "x$USE_POWERLINE_FONTS" != "x" ]; then
-          printf "$BG_YELLOW_BRIGHT$FG_BLUE$RIGHT_SOLID_ARROW_POWERLINE$RESET"
-          printf "$BG_YELLOW_BRIGHT$FG_WHITE_BRIGHT $GIT_BRANCH_SYMBOL_POWERLINE$branch$marks $RESET"
-          printf "$BG_BLACK_BRIGHT$FG_YELLOW_BRIGHT$RIGHT_SOLID_ARROW_POWERLINE$RESET"
+          printf "$BG_CYAN$FG_BLUE$RIGHT_SOLID_ARROW_POWERLINE$RESET"
+          printf "$BG_CYAN$FG_WHITE_BRIGHT $GIT_BRANCH_SYMBOL_POWERLINE$branch$marks $RESET"
+          printf "$BG_BLACK_BRIGHT$FG_CYAN$RIGHT_SOLID_ARROW_POWERLINE$RESET"
         else
           printf " $GIT_BRANCH_SYMBOL$branch$marks "
         fi
@@ -168,14 +168,14 @@ __powerline() {
 
         PS1+="$BG_BLUE$FG_WHITE_BRIGHT$(__virtualenv)$RESET"
 
-        PS1+="$BG_YELLOW_BRIGHT$FG_WHITE_BRIGHT$(__git_info)$RESET"
+        PS1+="$BG_CYAN$FG_WHITE_BRIGHT$(__git_info)$RESET"
 
         PS1+="$BG_BLACK_BRIGHT$FG_WHITE_BRIGHT $(__pwd) $RESET"
 
         if [ "x$USE_POWERLINE_FONTS" != "x" ]; then
           PS1+="$FG_BLACK_BRIGHT$RIGHT_SOLID_ARROW_POWERLINE$RESET "
         else
-          PS1+="$BG_EXIT$FG_YELLOW_BRIGHT $PS_SYMBOL $RESET "
+          PS1+="$BG_EXIT$FG_CYAN$PS_SYMBOL $RESET "
         fi
     }
 
